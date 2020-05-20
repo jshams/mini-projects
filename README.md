@@ -23,11 +23,11 @@ Here are some of my projects:
     - Herd Immunity Virus Simulation
     - Super Hero Team Dueler
 - **Webapps**
-    - Howlonghasitbeen
-    - Minute Notepad
-    - Piano
-    - Make Cookies
-    - Breakout
+    - [Howlonghasitbeen](webapps/howlonghasitbeen)
+    - [Minute Notepad](webapps/minute-notepad)
+    - [Breakout](webapps/breakout)
+    - [Virtual Piano](webapps/virtual-piano)
+    - [Cookie Clicker](webapps/cookie-clicker)
 - **Word Algorithms**
     - Anagram Generator / checker
     - Word unscrambler / combinations
