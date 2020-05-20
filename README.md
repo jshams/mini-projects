@@ -1,0 +1,34 @@
+# Mini Projects
+A collection of my mini projects that deserve some attention without their own repos. A mojority are written in Python, and the webapps are written in JS.
+
+Here are some of my projects:  
+    *(The ones in blue have been added and are clickable)*
+- **Algorithms**
+    - K-Means
+    - [Decision Tree](algorithms/decision-tree)
+    - [Fibonacci speed test](algorithms/fibonacci)
+    - Emdas
+    - Sorting Algorithms
+- **Predictive Models**
+    - Mnist number Recognition
+    - Jony Ive Tweet generator
+    - Pulsar Star Classification
+- **Primes**
+    - Sieve of Eratosthenes
+- **Puzzle Games**
+    - Sierpinski's Triangle
+    - Towers of Hanoi
+    - Sliding Puzzle Solver
+- **Simulations**
+    - Herd Immunity Virus Simulation
+    - Super Hero Team Dueler
+- **Webapps**
+    - Howlonghasitbeen
+    - Minute Notepad
+    - Piano
+    - Make Cookies
+    - Breakout
+- **Word Algorithms**
+    - Anagram Generator / checker
+    - Word unscrambler / combinations
+    - Permutations
