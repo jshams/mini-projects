@@ -12,7 +12,7 @@ Here are some of my projects:
 - **Predictive Models**
     - Mnist number Recognition
     - Jony Ive Tweet generator
-    - Pulsar Star Classification
+    - [Pulsar Star Classification](predictive-models/pulsar-star-classification)
 - **Primes**
     - Sieve of Eratosthenes
 - **Puzzle Games**
