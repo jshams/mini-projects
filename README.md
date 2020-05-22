@@ -29,6 +29,6 @@ Here are some of my projects:
     - [Virtual Piano](webapps/virtual-piano)
     - [Cookie Clicker](webapps/cookie-clicker)
 - **Word Algorithms**
-    - Anagram Generator / checker
+    - [Anagram Generator](word-algorithms/anagrams)
     - Word unscrambler / combinations
     - Permutations
