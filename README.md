@@ -4,7 +4,7 @@ A collection of my mini projects that deserve some attention without their own r
 Here are some of my projects:  
     *(The ones in blue have been added and are clickable)*
 - **Algorithms**
-    - K-Means
+    - [K-Means](algorithms/kmeans)
     - [Decision Tree](algorithms/decision-tree)
     - [Fibonacci speed test](algorithms/fibonacci)
     - Emdas
