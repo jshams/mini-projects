@@ -16,8 +16,8 @@ Here are some of my projects:
 - **Primes**
     - Sieve of Eratosthenes
 - **Puzzle Games**
-    - Sierpinski's Triangle
-    - Towers of Hanoi
+    - [Sierpinski's Triangle](puzzle-games/sierpinskis-triangle)
+    - [Towers of Hanoi](puzzle-games/towers-of-hanoi)
     - Sliding Puzzle Solver
 - **Simulations**
     - Herd Immunity Virus Simulation
