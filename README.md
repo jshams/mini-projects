@@ -14,7 +14,7 @@ Here are some of my projects:
     - Jony Ive Tweet generator
     - [Pulsar Star Classification](predictive-models/pulsar-star-classification)
 - **Primes**
-    - Sieve of Eratosthenes
+    - [Sieve of Eratosthenes](primes/sieve-of-eratosthenes)
 - **Puzzle Games**
     - [Sierpinski's Triangle](puzzle-games/sierpinskis-triangle)
     - [Towers of Hanoi](puzzle-games/towers-of-hanoi)
