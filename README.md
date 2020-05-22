@@ -15,6 +15,7 @@ Here are some of my projects:
     - [Pulsar Star Classification](predictive-models/pulsar-star-classification)
 - **Primes**
     - [Sieve of Eratosthenes](primes/sieve-of-eratosthenes)
+    - [Sieve of Atkin](primes/sieve-of-atkin)
 - **Puzzle Games**
     - [Sierpinski's Triangle](puzzle-games/sierpinskis-triangle)
     - [Towers of Hanoi](puzzle-games/towers-of-hanoi)
