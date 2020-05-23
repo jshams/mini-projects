@@ -2,7 +2,7 @@
 A collection of my mini projects that deserve some attention without their own repos. A mojority are written in Python, and the webapps are written in JS.
 
 Here are some of my projects:  
-    *(The ones in blue have been added and are clickable)*
+    *(The ones in blue have been added and are viewable)*
 - **Algorithms**
     - [K-Means](algorithms/kmeans)
     - [Decision Tree](algorithms/decision-tree)
@@ -19,7 +19,7 @@ Here are some of my projects:
 - **Puzzle Games**
     - [Sierpinski's Triangle](puzzle-games/sierpinskis-triangle)
     - [Towers of Hanoi](puzzle-games/towers-of-hanoi)
-    - Sliding Puzzle Solver
+    - [Sliding Puzzle Solver](puzzle-games/sliding-puzzle)
 - **Simulations**
     - Herd Immunity Virus Simulation
     - Super Hero Team Dueler
