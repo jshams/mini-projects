@@ -33,3 +33,4 @@ Here are some of my projects:
     - [Anagram Generator](word-algorithms/anagrams)
     - Word unscrambler / combinations
     - Permutations
+    - [Autocomplete](word-algorithms/autocomplete)
