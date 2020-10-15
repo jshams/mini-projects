@@ -43,16 +43,21 @@ if __name__ == '__main__':
     import sys
     n = 5
     if len(sys.argv) > 1:
-        n = int(sys.argv[1])
+        n = sys.argv[1]
     else:
         n = input("Enter the number of rings you'd like to solve for: ")
-        try:
-            n = int(n)
-        except:
-            exit()
+    try:
+        n = int(n)
+    except ValueError:
+        print(f'Invalid argument for n: "{n}".')
+        print('Aborting...')
+        exit()
     z = towers_of_hanoi_moves(n)
     print(
-        f'With {n} rings in our tower the minumum number of moves is: {len(z)}')
-    print('And the moves are:')
-    # [print(f'{i + 1}. {y}') for i, y in enumerate(z)]
-    print(z)
+        f'With {n} rings in our tower the minumum number of moves is: {len(z)}'
+    )
+    if input('Would you like to see them? (yes) ') in ('yes', ''):
+        print('The moves are:')
+        print(z)
+    else:
+        print('Aborting...')
