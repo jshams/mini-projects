@@ -1,4 +1,4 @@
-from random import random
+from random import uniform
 from math import sqrt
 
 
@@ -65,55 +65,62 @@ class KMeans():
                 min_dist = dist
                 # also update nearest_cluster with the cluster's points
                 nearest_cluster = cluster
-        # once we've gone through all the points the closest point is nearest_cluster
+        # once we've gone through all the points the closest point is
+        # nearest_cluster
         return nearest_cluster
 
     def average(self, x_n_list):
         '''params: x_y_list
-        x_y_list: 2d array. list of points([[x1, y1, z1...], [x2, y2, z2...], [x3, y3, z3...]...])
-        returns the average coordinate of all coordinates.
+        x_y_list: 2d array. list of points ->
+            ([[x1, y1, z1...], [x2, y2, z2...], [x3, y3, z3...]...])
+        returns the average coordinate (cluster center) of all coordinates.
         '''
-        averages = (
-            sum(row[i] for row in x_n_list) / len(x_n_list)
-            for i in range(self.data_width)
+        averages = tuple(
+            sum(col_vals) / len(col_vals)
+            for col_vals in zip(*x_n_list)
         )
-        return tuple(averages)
+        return averages
 
-        # averages = []
-        # for i in range(self.data_width):
-        #     sum_column = sum(row[i] for row in x_n_list)
-        #     averages.append(sum_column / len(x_n_list))
-        # return averages
+    def get_column_ranges(self):
+        '''
+        finds the range of each column in the data and sets the values of
+        mins and maxs binded to self. Mins will be a tuple with the minimum
+        value of each column by index, and max is the same with maximum values.
 
-    def get_mins_and_maxs(self):
-        mins = []
-        maxs = []
-        for i in range(self.data_width):
-            col_min = min(row[i] for row in self.X)
-            col_max = max(row[i] for row in self.X)
-            mins.append(col_min)
-            maxs.append(col_max)
-        self.mins = mins
-        self.maxs = maxs
+        This is used primarily by the generate_random_cluster_center method to
+        generate random a point that lies within the data's range.
+        '''
+        self.mins = tuple(min(col_vals) for col_vals in zip(*self.X))
+        self.maxs = tuple(max(col_vals) for col_vals in zip(*self.X))
 
     def generate_random_cluster_center(self):
         '''generates a random cluster center in bounds of the min and max
         of each point'''
         # get mins and maxs if need be (occurs on first call)
         if self.mins is None or self.maxs is None:
-            self.get_mins_and_maxs()
+            self.get_column_ranges()
+        # generate a random float for each min/max range in mins and maxs
+        random_cluster_center = tuple(
+            uniform(minimum, maximum)
+            for minimum, maximum in zip(self.mins, self.maxs)
+        )
 
-        random_cluster = []
-        for minimum, maximum in zip(self.mins, self.maxs):
-            random_point = (random() * (maximum - minimum)) + minimum
-            random_cluster.append(random_point)
-        return tuple(random_cluster)
+        return random_cluster_center
 
     def generate_random_centers(self):
         '''returns a generator that creates n_clusters new clusters'''
-        return (self.generate_random_cluster_center() for _ in range(self.n_clusters))
+        return (self.generate_random_cluster_center()
+                for _ in range(self.n_clusters))
 
     def epoch(self, prev_cluster):
+        '''
+        A single epoch of the Kmeans algorithm. During an epoch each cluster
+        center is moved to a new location. This works by finding the points
+        closest to each cluster center, clustering those points and creating
+        new cluster centers that is the average of all its nearest points.
+        If a cluster center has no points in its a cluster, a new random
+        cluster is generated.
+        '''
         self.n_epochs += 1
         current_clusters = {}
         # -- for cluster-center in prev.keys():
