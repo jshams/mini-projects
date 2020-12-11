@@ -23,6 +23,18 @@ This method utilizes BK Trees. A fairly uncommon tree used mainly for this
 purpose. The tree's nodes store words and its child words. The children are
 stored by distance. This makes searching through the tree fast.
 
+### Code samples
+
+```python
+>>> words = ['melon', 'lemon', 'salmon']
+>>> autocorrect = OutboundApproach(words)
+>>> new_words, dist = s.search('lamon')
+>>> new_words
+['lemon']
+>>> dist
+1
+```
+
 ...
 
 ## Method 2 - Outbound Autocorrect
@@ -37,6 +49,18 @@ a time. When a layer of edits leads to an existing word, all real words
 found in that layer are returned.
 
 ...
+
+### Code samples
+
+```python
+>>> words = ['melon', 'lemon', 'salmon']
+>>> bk_tree = BKTree(words=words)
+>>> new_words, dist = s.search('lamon')
+>>> new_words
+['lemon']
+>>> dist
+1
+```
 
 ## String distance
 
