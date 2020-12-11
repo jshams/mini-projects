@@ -23,18 +23,6 @@ This method utilizes BK Trees. A fairly uncommon tree used mainly for this
 purpose. The tree's nodes store words and its child words. The children are
 stored by distance. This makes searching through the tree fast.
 
-### Code samples
-
-```python
->>> words = ['melon', 'lemon', 'salmon']
->>> autocorrect = OutboundApproach(words)
->>> new_words, dist = s.search('lamon')
->>> new_words
-['lemon']
->>> dist
-1
-```
-
 ...
 
 ## Method 2 - Outbound Autocorrect
@@ -50,16 +38,69 @@ found in that layer are returned.
 
 ...
 
-### Code samples
+## Code samples for search
+
+### Creating an instance of BKTree
 
 ```python
 >>> words = ['melon', 'lemon', 'salmon']
->>> bk_tree = BKTree(words=words)
->>> new_words, dist = s.search('lamon')
->>> new_words
-['lemon']
->>> dist
-1
+>>> # create a BKTree instance filled with the words above
+>>> autocorrect = BKTree(words)
+```
+
+### Creating an instance of OutboundAutocorrect
+
+```python
+>>> words = ['melon', 'lemon', 'salmon']
+>>> # create a BKTree instance filled with the words above
+>>> autocorrect = OutboundAutocorrect(words)
+```
+
+### Searching for corrections
+
+Note the search methods are the same for both of the above classes.
+
+Search returns two items in a tuple. The first is a list of possible
+corrections and the second is their distance from the search word.
+
+```python
+>>> # search for a correction for 'lamon'
+>>> autocorrect.search('lamon')
+(['lemon'], 1)
+>>> autocorrect.search('slamon')
+(['lemon', 'salmon'], 2)
+```
+
+### Existing words
+
+If the word exists, an array with the word along with a dist of 0 is returned.
+
+```python
+>>> autocorrect.search('lemon')
+(['lemon'], 0)
+```
+
+### Tollerance
+
+The search method has a default parameter called `tollerance`. This is the
+maximum distance word to search for. Lower tollerance will result in better
+performance. The default value is 3.
+
+```python
+>>> autocorrect.search('slamon', tollerance=1)
+([], 1)
+>>> autocorrect.search('slamon', tollerance=2)
+(['lemon', 'salmon'], 2)
+```
+
+### No words found
+
+In the case that no words are found, an empty array along with the tollerance
+is returned.
+
+```python
+>>> autocorrect.search('orange', tollerance=3)
+([], 3)
 ```
 
 ## String distance
