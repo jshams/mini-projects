@@ -82,7 +82,7 @@ class BKTree():
         else:
             self.root.add_child(word)
 
-    def nearest_word_search(self, word, tollerance=3):
+    def search(self, word, tollerance=3):
         '''
         Traverse this tree by finding all nearest children of each node that
         fall within the tollerance of the word. Returns a list of all words
@@ -201,7 +201,7 @@ if __name__ == '__main__':
 
     # search for a word and time it
     start = time()
-    res = bk_tree.nearest_word_search(word, tollerance=tol)
+    res = bk_tree.search(word, tollerance=tol)
     duration = round(time() - start, 1)
     print(f'Time to search for word with tollerance of {tol}: '
           f'{duration} seconds')

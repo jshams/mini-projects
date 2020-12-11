@@ -4,7 +4,7 @@ from string import ascii_letters
 letters = ascii_letters[:26]
 
 
-class OutboundApproach:
+class OutboundAutocorrect:
     '''
     The outbound approach for autocomplete works by storing a set of all word
     for fast lookup. A set of edits are performed using a BFS style. 1 edit at
@@ -148,7 +148,7 @@ class OutboundApproach:
 if __name__ == '__main__':
     f = open('/usr/share/dict/words')
     words = f.read().splitlines()
-    s = OutboundApproach(words)
+    s = OutboundAutocorrect(words)
 
     words, dist = s.search('pooooooo')
     print(words)
