@@ -60,3 +60,11 @@ Outbound works best when the typo is close it's correction.
 ## Improving the BK Tree
 
 ...
+
+## Resources
+
+[BK Tree Introduction Implementation](https://www.geeksforgeeks.org/bk-tree-introduction-implementation/)
+by Geeks for Geeks.
+
+[The BK-Tree – A Data Structure for Spell Checking](https://nullwords.wordpress.com/2013/03/13/the-bk-tree-a-data-structure-for-spell-checking/)
+by Xenopax's Blog.
