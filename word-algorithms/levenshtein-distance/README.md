@@ -71,4 +71,12 @@ Edit operations:
 
 ## View the code
 
-See the code [here](levenshtein.py).
+See the implementation [here](levenshtein.py).
+
+## Resources
+
+[Levenshtein Distance and Text Similarity in Python](https://stackabuse.com/levenshtein-distance-and-text-similarity-in-python/)
+by Frank Hoffman on Stackabuse.
+
+[Mininum Edit Distance Dynamic Programming](https://youtu.be/We3YDTzNXEk)
+by Tushar Roy on YouTube.
