@@ -38,7 +38,7 @@ found in that layer are returned.
 
 ...
 
-## Code samples for search
+## Code samples for correct
 
 ### Creating an instance of BKTree
 
@@ -58,16 +58,16 @@ found in that layer are returned.
 
 ### Searching for corrections
 
-Note the search methods are the same for both of the above classes.
+Note the `correct` methods are the same for both of the above classes.
 
-Search returns two items in a tuple. The first is a list of possible
-corrections and the second is their distance from the search word.
+`correct` returns two items in a tuple. The first is a list of possible
+corrections and the second is their distance from the typo word.
 
 ```python
 >>> # search for a correction for 'lamon'
->>> autocorrect.search('lamon')
+>>> autocorrect.correct('lamon')
 (['lemon'], 1)
->>> autocorrect.search('slamon')
+>>> autocorrect.correct('slamon')
 (['lemon', 'salmon'], 2)
 ```
 
@@ -76,20 +76,20 @@ corrections and the second is their distance from the search word.
 If the word exists, an array with the word along with a dist of 0 is returned.
 
 ```python
->>> autocorrect.search('lemon')
+>>> autocorrect.correct('lemon')
 (['lemon'], 0)
 ```
 
 ### Tollerance
 
-The search method has a default parameter called `tollerance`. This is the
+The correct method has a default parameter called `tollerance`. This is the
 maximum distance word to search for. Lower tollerance will result in better
 performance. The default value is 3.
 
 ```python
->>> autocorrect.search('slamon', tollerance=1)
+>>> autocorrect.correct('slamon', tollerance=1)
 ([], 1)
->>> autocorrect.search('slamon', tollerance=2)
+>>> autocorrect.correct('slamon', tollerance=2)
 (['lemon', 'salmon'], 2)
 ```
 
@@ -99,7 +99,7 @@ In the case that no words are found, an empty array along with the tollerance
 is returned.
 
 ```python
->>> autocorrect.search('orange', tollerance=3)
+>>> autocorrect.correct('orange', tollerance=3)
 ([], 3)
 ```
 

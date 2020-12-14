@@ -60,7 +60,7 @@ class OutboundAutocorrect:
         yield from self.substitutions(word)
         yield from self.swaps(word)
 
-    def search(self, word, tollerance=3):
+    def correct(self, word, tollerance=3):
         '''
         Using BFS search for all possible words that are possible real words
         that can be corrected from the given word with the minimun Edit
@@ -150,6 +150,6 @@ if __name__ == '__main__':
     words = f.read().splitlines()
     s = OutboundAutocorrect(words)
 
-    words, dist = s.search('pooooooo')
+    words, dist = s.correct('pooooooo')
     print(words)
     print(dist)
