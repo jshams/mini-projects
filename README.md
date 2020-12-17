@@ -26,7 +26,7 @@ Here are some of my projects:
 ## Predictive Models
 
 - [Pulsar Star Classification](predictive-models/pulsar-star-classification)
-- Jony Ive Tweet generator
+- [Jony Ive Tweet generator](predictive-models/jony-ive-tweet-generator)
 - Mnist number Recognition
 
 ## Puzzle Games
